@@ -1,10 +1,12 @@
+package search.binarySearch;
+
 /**
  * @author <a href="mailto:chenxiong_ch.pt@taobao.com">chenxiong</a>
  * @since 12-6-4 PM11:04
  */
 //找出给定值K的出现次数
 //利用二分查找法，分别确定 K的左右边界
-public class BinarySearchKCounts {
+public class BinarySearchCounts {
 	public static int searchRightBoundary(int[] s, int k, int low, int high){
 		int mid;
 		if(low > high) return low;

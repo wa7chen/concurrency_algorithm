@@ -1,4 +1,4 @@
-package binarySearch;
+package search.binarySearch;
 
 public class BinarySearch {
 	public static int binSearch(int[] counts,int aim){

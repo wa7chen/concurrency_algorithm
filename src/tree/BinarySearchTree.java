@@ -1,6 +1,5 @@
 package tree;
 
-import binarySearch.BinarySearch;
 import com.sun.istack.internal.Nullable;
 
 import java.util.NoSuchElementException;

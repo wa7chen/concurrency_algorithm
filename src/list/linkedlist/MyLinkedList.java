@@ -1,6 +1,5 @@
 package list.linkedlist;
 
-import java.util.ListIterator;
 import java.util.NoSuchElementException;
 
 /**
@@ -205,7 +204,6 @@ public class MyLinkedList<T> {
 			this.previous = p;
 		}
 		public void get(){
-
 		}
 
 	}
