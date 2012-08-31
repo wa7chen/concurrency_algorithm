@@ -13,6 +13,8 @@ import java.util.concurrent.Future;
 import java.util.concurrent.TimeUnit;
 
 /**
+ * 被阻塞的NIO通道可以自动响应终端
+ * 演示放进executor中的线程进行中断的方法
  * User: ${wa7chen}
  * Time: PM2:38
  */

@@ -39,7 +39,9 @@ class TheJoiner extends Thread{
 	public void run() {
 		try {
 			sleeper.join();
-//			sleep(1500);
+			System.out.println("joiner get to work.");
+			sleep(9500);
+			System.out.println("joiner work done.");
 		} catch (InterruptedException e) {
 			System.out.println("Interrupted");
 		}

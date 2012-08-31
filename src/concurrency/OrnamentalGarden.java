@@ -124,7 +124,7 @@ public class OrnamentalGarden {
 //		Entrance.cancel();
 		service.shutdown();
 //		service.shutdownNow(); use shutdownNow() would send a interrupt()
-//      to the thread that started by this se rvice
+//      to the thread that started by this service
 //		if(!service.awaitTermination(250,TimeUnit.MILLISECONDS))
 //			System.out.println("some task not terminated");
 

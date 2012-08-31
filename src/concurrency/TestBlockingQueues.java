@@ -49,7 +49,7 @@ class LiftOffAdder implements Runnable {
 	}
 
 	public void run() {
-		for (int i = 0; i < 5; i++) {
+		for (int i = 0; i < 1000; i++) {
 			runner.add(new LiftOff(5));
 		}
 	}
@@ -88,8 +88,8 @@ public class TestBlockingQueues {
 	}
 
 	public static void main(String[] args) {
-		test("LinkedBlockingQueue", new LinkedBlockingQueue<LiftOff>());
+//		test("LinkedBlockingQueue", new LinkedBlockingQueue<LiftOff>(2));
 		test("ArrayBlockingQueue", new ArrayBlockingQueue<LiftOff>(3));
-		test("SynchronizedBlockingQueue", new SynchronousQueue<LiftOff>());
+//		test("SynchronizedBlockingQueue", new SynchronousQueue<LiftOff>());
 	}
 }

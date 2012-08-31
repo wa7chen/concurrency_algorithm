@@ -1,5 +1,7 @@
 package thinkInJava;
 
+import sun.jvm.hotspot.runtime.Bytes;
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -62,25 +64,29 @@ public class Test {
 			}
 		}
 	}*/
-	public static void main(String[] args) {
+	private void test1() {
+
 		int i = 1;
 		int j = 1;
-		while (true){
+		while (true) {
 			j = i;
 			i *= 2;
 			System.out.println(j);
-			if(j == i) break;
+			if (j == i) break;
 		}
 		//测试字符里面的数字表示
 		char[] chars = new char[10];
 		chars[0] = '1';
 		chars[1] = 2;
 		System.out.println(chars[0]);
-
 	}
 
+	private void test2() {
+	}
 
+	public static void main(String[] args) {
 
+	}
 
 
 }

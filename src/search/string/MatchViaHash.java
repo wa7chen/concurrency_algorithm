@@ -19,6 +19,7 @@ public class MatchViaHash {
 		if(str == null || subStr == null ||  str.length() == 0 || subStr.length() == 0){
 			return  -1;
 		}
+		//需要注意，可能会用 溢出的问题，不适用int
 		long subHash = subStr.hashCode();
 		long parentHash = str.substring(0,subStr.length()).hashCode();
 

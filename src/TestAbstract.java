@@ -6,14 +6,22 @@ import java.util.List;
  * Time: PM3:38
  */
 public abstract class TestAbstract {
-	public void foo(){
+	public static void foo(Object a){
 
+		if(a instanceof Long){
+			System.out.println("true");
+		}
 	}
 
 	public static void main(String[] args) {
-		List<String> list = new ArrayList<String>();
-		for(int i = 0;i < 0;i++){
-			list.remove(i);
-		} 
+		long a = 1111l;
+		Long b = 1111l;
+		if( a == b ) {
+			System.out.println("equals");
+		}
+		else {
+			System.out.println("not equals");
+		}
+		foo(a);
 	}
 }
