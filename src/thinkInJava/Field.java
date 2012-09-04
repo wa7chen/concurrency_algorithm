@@ -4,7 +4,7 @@ package thinkInJava;
  * Created by IntelliJ IDEA.
  * User: ${wa7chen}
  * Date: 11-4-3
- * Time: ä¸‹åˆ8:52
+ * Time: ÏÂÎç8:52
  */
 public class Field {
 	public int i = 0;
@@ -16,15 +16,19 @@ public class Field {
 		Field field = new Field();
 		field.go();
 		System.out.println(field.i);
-		String str = "é™ˆé›„a";
+		String str = "³ÂĞÛa";
 		System.out.println(str.charAt(0));
 		System.out.println(str.length());
-		System.out.println("é™ˆ".getBytes().length);
+
+		System.out.println("³Â".getBytes().length);
 		/*
-		ä¸€ä¸ªæ±‰å­—ä¸‰å­—èŠ‚ï¼Ÿå­—ç¬¦ä¸²çš„é•¿åº¦æ˜¯å­—ç¬¦çš„é•¿åº¦ï¼Œä¸è®¡è¾ƒæ˜¯æ±‰å­—è¿˜æ˜¯è‹±æ–‡ç¬¦å·
-		è¾“å‡ºç»“æœ
+		Ò»¸öºº×ÖÈı×Ö½Ú£¿×Ö·û´®µÄ³¤¶ÈÊÇ×Ö·ûµÄ³¤¶È£¬²»¼Æ½ÏÊÇºº×Ö»¹ÊÇÓ¢ÎÄ·ûºÅ
+		Êä³ö½á¹û
+
+		ºº×Ö±àÂë³É×Ö½ÚºÍÆ½Ì¨Ïà¹Ø
+		×îºóÒ»¸ö¿ÉÄÜÊÇ2 »òÕß 3£¬¿´Æ½Ì¨
 1
-é™ˆ
+³Â
 3
 3
 

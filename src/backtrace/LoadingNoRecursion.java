@@ -2,10 +2,11 @@ package backtrace;
 
 /**
  * User: ${wa7chen}
- * Time: ä¸Šåˆ9:16
+ * Time: ÉÏÎç9:16
  */
-//è¿­ä»£å›æº¯æ³•
+//µü´ú»ØËİ·¨
 public class LoadingNoRecursion {
+
 
 	public static int maxLoading(int[] w,int c,int[] bestx){
 		int i = 1;
@@ -19,10 +20,10 @@ public class LoadingNoRecursion {
 			r += w[j];
 		}
 
-		//æœç´¢å­æ ‘
+		//ËÑË÷×ÓÊ÷
 		while(true){
 			while(i <= n && cw + w[i] <= c){
-				//è¿›å…¥å·¦å­æ ‘
+				//½øÈë×ó×ÓÊ÷
 				r -= w[i];
 				cw += w[i];
 				x[i] = 1;
@@ -30,7 +31,7 @@ public class LoadingNoRecursion {
 			}
 
 			if(i > n){
-				//åˆ°è¾¾å¶å­èŠ‚ç‚¹
+				//µ½´ïÒ¶×Ó½Úµã
 				for(int j = 1;j <= n;j++){
 					bestx[j] = x[j];
 				}
@@ -38,22 +39,22 @@ public class LoadingNoRecursion {
 			}
 
 			else{
-				//è¿›å…¥å³å­æ ‘
+				//½øÈëÓÒ×ÓÊ÷
 				r -= w[i];
 				x[i] = 0;
 				i++;
 			}
 
 			while(cw + r <= bestw){
-				//å‰ªæå›æº¯
+				//¼ôÖ¦»ØËİ
 				i--;
 				while(i > 0 && x[i] == 0){
-					//ä»å³å­æ ‘è¿”å›
+					//´ÓÓÒ×ÓÊ÷·µ»Ø
 					r += w[i];
 				}
 				if(i ==0 ) return bestw;
 
-				//è¿›å…¥å³å­æ ‘
+				//½øÈëÓÒ×ÓÊ÷
 				x[i] = 0;
 				cw -= w[i];
 				i++;

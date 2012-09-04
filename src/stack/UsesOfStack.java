@@ -1,26 +1,19 @@
 package stack;
 
-import com.sun.xml.internal.bind.v2.runtime.unmarshaller.Intercepter;
-
-import java.awt.image.ImagingOpException;
 import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.nio.channels.Channel;
 import java.util.Arrays;
-import java.util.Scanner;
-import java.util.regex.Pattern;
 
 
 /**
- *è®¡ç®—åç¼€è¡¨è¾¾å¼
- * ä¸­ç¼€è½¬åç¼€
+ *¼ÆËãºó×º±í´ïÊ½
+ * ÖĞ×º×ªºó×º
  */
 /*
-è¿™é‡Œå‡ºç°çš„ä¸»è¦é—®é¢˜å°±æ˜¯ä»charæ•°å­—ä¸­è¯»æ•°å­— ç„¶åå†å–å‡ºæ—¶æ•°å­—ç±»å‹çš„é—®é¢˜
-è®°ä½ä¸€ç‚¹charç±»å‹çš„æ•°å­—è®¡ç®—æ—¶ æ˜¯æ‹¿ä»–ä»¬å¯¹åº”çš„ç å€¼è®¡ç®—ï¼Œè€Œä¸æ˜¯ç¬¦å·å€¼ï¼Œæ‰€ä»¥ä¼šæœ‰é—®é¢˜
-æˆ‘çš„åšæ³•æ˜¯å°†charæ•°å­—å…ˆ-'0'å­—ç¬¦0ï¼Œè¿™æ—¶å¾—åˆ°çš„å°±æ˜¯intï¼Œç„¶åå†å­˜å…¥stack
+ÕâÀï³öÏÖµÄÖ÷ÒªÎÊÌâ¾ÍÊÇ´ÓcharÊı×ÖÖĞ¶ÁÊı×Ö È»ºóÔÙÈ¡³öÊ±Êı×ÖÀàĞÍµÄÎÊÌâ
+¼Ç×¡Ò»µãcharÀàĞÍµÄÊı×Ö¼ÆËãÊ± ÊÇÄÃËûÃÇ¶ÔÓ¦µÄÂëÖµ¼ÆËã£¬¶ø²»ÊÇ·ûºÅÖµ£¬ËùÒÔ»áÓĞÎÊÌâ
+ÎÒµÄ×ö·¨ÊÇ½«charÊı×ÖÏÈ-'0'×Ö·û0£¬ÕâÊ±µÃµ½µÄ¾ÍÊÇint£¬È»ºóÔÙ´æÈëstack
  */
 public class UsesOfStack {
 	private static char[] operators = {'*','+','-','/'};
@@ -28,14 +21,14 @@ public class UsesOfStack {
 	public static int countPostfix(char[] items){
 		MyStack stack = new MyStack();
 		for(int i = 0;i < items.length;i++){
-			//å¦‚æœæ˜¯æ•°å­—ç›´æ¥æ¨å…¥stackä¸­
+			//Èç¹ûÊÇÊı×ÖÖ±½ÓÍÆÈëstackÖĞ
 			if(Character.isDigit(items[i]) ){
-				//è¿™é‡Œæ•°å­—è¿˜éœ€è¦å¤„ç† ä»å­—ç¬¦è½¬åŒ–ä¸ºæ•´æ•°
+				//ÕâÀïÊı×Ö»¹ĞèÒª´¦Àí ´Ó×Ö·û×ª»¯ÎªÕûÊı
 				int digit = items[i] - '0';
 				stack.push(digit);
 			}else if(Arrays.binarySearch(operators,items[i]) != -1){
-				//å¦‚æœæ˜¯æ“ä½œç¬¦é‚£ä¹ˆä»stackä¸­å–ä¸¤ä¸ªæ•°è¿›è¡Œè®¡ç®—ï¼Œç„¶ååœ¨push
-				//è¿™é‡Œè¦æ³¨æ„å…ˆåé¡ºåº
+				//Èç¹ûÊÇ²Ù×÷·ûÄÇÃ´´ÓstackÖĞÈ¡Á½¸öÊı½øĞĞ¼ÆËã£¬È»ºóÔÚpush
+				//ÕâÀïÒª×¢ÒâÏÈºóË³Ğò
 				int y = (Integer)stack.pop();
 				int x = (Integer)stack.pop();
 				int value =  0;
@@ -49,13 +42,13 @@ public class UsesOfStack {
 				//System.out.println(value);
 			}
 		}
-		//å¾ªç¯æˆªæ­¢æ—¶ï¼Œpopå‡ºstacké‡Œé¢çš„å€¼
+		//Ñ­»·½ØÖ¹Ê±£¬pop³östackÀïÃæµÄÖµ
 		int total = (Integer)stack.pop();
 		System.out.println(total);
 		return total;
 	}
 	/*
-	ä»æµä¸­è¯»å–å­—ç¬¦ä¸²
+	´ÓÁ÷ÖĞ¶ÁÈ¡×Ö·û´®
 	 */
 	public static String getString() throws IOException{
 		InputStreamReader input = new InputStreamReader(System.in);
@@ -69,7 +62,7 @@ public class UsesOfStack {
 		String posfix = "";
 		for(int i = 0 ;i < infix.length();i++){
 			char item = infix.charAt(i);
-			//å¦‚æœæ˜¯æ•°å­—ç›´æ¥è¾“å‡º
+			//Èç¹ûÊÇÊı×ÖÖ±½ÓÊä³ö
 			if(Character.isDigit(item)){
 				posfix += item;
 			}
@@ -79,17 +72,17 @@ public class UsesOfStack {
 				else {
 					while(stack.size() >= 1){
 						char last = (Character)stack.peek();
-						//é¦–å…ˆåˆ¤æ–­æ˜¯å¦æ˜¯')',é‚£ä¹ˆå°†popâ€˜ï¼ˆâ€™ä¹‹å‰æ‰€æœ‰çš„
+						//Ê×ÏÈÅĞ¶ÏÊÇ·ñÊÇ')',ÄÇÃ´½«pop¡®£¨¡¯Ö®Ç°ËùÓĞµÄ
 						if(item == ')'){
 							while(true){
 								char x = (Character)stack.pop();
 								if(x != '(') {
 									posfix += x;
 								}else break;
-							}  //å¾ªç¯çš„æ§åˆ¶å¾ˆé‡è¦ï¼Œå¦‚æœè¿™é‡Œæ²¡æœ‰breakï¼Œé‚£ä¹ˆï¼‰ä¹Ÿä¼šè¾“å…¥åˆ°æ ˆä¸­
+							}  //Ñ­»·µÄ¿ØÖÆºÜÖØÒª£¬Èç¹ûÕâÀïÃ»ÓĞbreak£¬ÄÇÃ´£©Ò²»áÊäÈëµ½Õ»ÖĞ
 							break;
 						}
-						//å¦‚æœstacké¦–å…ƒç´ å¤§äºå³å°†è¿›stackçš„å…ƒç´ ï¼Œé‚£ä¹ˆå°†æ ˆé¦–å…ƒç´ popï¼Œæ–°å…ƒç´ push
+						//Èç¹ûstackÊ×ÔªËØ´óÓÚ¼´½«½østackµÄÔªËØ£¬ÄÇÃ´½«Õ»Ê×ÔªËØpop£¬ĞÂÔªËØpush
 						while(stack.size() >= 1 && priority(last,item)){
 							posfix += stack.pop();
 							if(stack.size() > 0)
@@ -102,7 +95,7 @@ public class UsesOfStack {
 				}
 			}
 		}
-		//å¾ªç¯ç»“æŸåï¼Œpopæ‰€æœ‰çš„å…ƒç´ 
+		//Ñ­»·½áÊøºó£¬popËùÓĞµÄÔªËØ
 		while(stack.size() != 0){
 			System.out.println("popall");
 			posfix += stack.pop();
@@ -110,10 +103,10 @@ public class UsesOfStack {
 		return posfix;
 	}
 
-	//åˆ¤æ–­è¯»å–çš„ä¸‹ä¸ªç¬¦å·çš„ä¼˜å…ˆçº§
-	//è‹¥è¯»å–çš„ç¬¦å·çš„ä¼˜å…ˆçº§ä¸é«˜äºæ ˆé¡¶çš„ç¬¦å·çš„ä¼˜å…ˆçº§åˆ™å°†æ ˆé¡¶è¾“å‡º
-	//ç‰¹ä¾‹ï¼šå¦‚æœæ ˆé¡¶æ˜¯ï¼ˆé‚£ä¹ˆæ‰€æœ‰çš„ç¬¦å·å‡push
-	//flagè¡¨ç¤ºæ˜¯å¦èƒ½å‡ºæ ˆ
+	//ÅĞ¶Ï¶ÁÈ¡µÄÏÂ¸ö·ûºÅµÄÓÅÏÈ¼¶
+	//Èô¶ÁÈ¡µÄ·ûºÅµÄÓÅÏÈ¼¶²»¸ßÓÚÕ»¶¥µÄ·ûºÅµÄÓÅÏÈ¼¶Ôò½«Õ»¶¥Êä³ö
+	//ÌØÀı£ºÈç¹ûÕ»¶¥ÊÇ£¨ÄÇÃ´ËùÓĞµÄ·ûºÅ¾ùpush
+	//flag±íÊ¾ÊÇ·ñÄÜ³öÕ»
 	public static boolean priority(char a,char b){
 		boolean flag = false;
 		switch (b){
@@ -121,13 +114,13 @@ public class UsesOfStack {
 			case '-':flag = true;break;
 			case '*':;
 			case '/':if(a == '*' || a == '/') flag = true;break;
-		}//'('é»˜è®¤ä¸ºæœ€é«˜ä¼˜å…ˆçº§
+		}//'('Ä¬ÈÏÎª×î¸ßÓÅÏÈ¼¶
 		if(a == '(') flag = false;
 		return flag;
 	}
 
 	public static void main(String[] args) throws IOException{
-//å°†å­—ç¬¦ä¸²è½¬åŒ–ä¸ºå­—ç¬¦æ•°ç»„
+//½«×Ö·û´®×ª»¯Îª×Ö·ûÊı×é
 		String string = "9-8*(4+9*7)-2";
 		String posfix =  infix2Posfix(string)  ;
 		System.out.println(posfix);

@@ -3,7 +3,7 @@ package stack;
 import java.util.EmptyStackException;
 
 /*
-åŸºäºæ•°ç»„å®ç°çš„æ ˆ
+»ùÓÚÊı×éÊµÏÖµÄÕ»
  */
 public class MyStack {
 	public static final int DEFAULT = 10;
@@ -12,8 +12,9 @@ public class MyStack {
 	public MyStack(){
 		clear();
 	}
-	/*
-	åˆå§‹åŒ–
+
+	/**
+	 * init
 	 */
 	public void clear(){
 		elements = new Object[DEFAULT];
@@ -23,18 +24,14 @@ public class MyStack {
 	public int size(){
 		return size;
 	}
-	/*
-	æ‰©å®¹æ•°ç»„
-	 */
+
 	public void enlarge(){
 		int largeSize = elements.length * 2;
 		Object[] newItems = new Object[largeSize];
 		System.arraycopy(elements,0,newItems,0,elements.length);
 		elements = newItems;
 	}
-	/*
-	å‘stackä¸­æ·»åŠ å…ƒç´ 
-	 */
+
 	public Object push(Object item){
 		if(size == elements.length){
 			enlarge();
@@ -46,7 +43,7 @@ public class MyStack {
 	}
 	/*
 	Looks at the object at the top of this stack without removing it
-	æ³¨æ„è¿™é‡Œå¿…é¡»è¦æ˜¯çº¿ç¨‹åŒæ­¥çš„synchronized
+	×¢ÒâÕâÀï±ØĞëÒªÊÇÏß³ÌÍ¬²½µÄsynchronized
 	  */
 	public synchronized Object peek(){
 		if(size == 0 ){
@@ -63,8 +60,8 @@ public class MyStack {
 	}
 
 	/*
-	æŸ¥æ‰¾å…ƒç´ ï¼Œä¸å­˜åœ¨è¿”å›-1ï¼›
-	 æ‰¾åˆ°åè¿”å›æ‰¾åˆ°çš„ç¬¬ä¸€ä¸ªå…ƒç´ çš„ä¸‹æ ‡
+	²éÕÒÔªËØ£¬²»´æÔÚ·µ»Ø-1£»
+	 ÕÒµ½ºó·µ»ØÕÒµ½µÄµÚÒ»¸öÔªËØµÄÏÂ±ê
 	 */
 	public synchronized int search(Object obj){
 		int index = - 1;
