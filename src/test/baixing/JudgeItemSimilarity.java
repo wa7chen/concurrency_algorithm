@@ -1,7 +1,5 @@
 package test.baixing;
 
-import search.string.MatchViaHash;
-
 import java.io.Serializable;
 import java.util.Arrays;
 import java.util.Random;
